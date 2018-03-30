@@ -17,7 +17,6 @@
 ## 4. 定制内核
 
    sudo make menuconfig
-   
    进入界面需要将Device Drivers ---> Generic Driver Options ---> Automount devtmpfs at /dev, after the kernel mounted the rootfs 设置为N (不然系统启动不了，原因待学)。
    
 ## 5. 编译内核和模块
