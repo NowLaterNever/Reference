@@ -1,15 +1,10 @@
 # ubuntu14.04下手动更换linux内核为3.10.58
 
 ## 1. 下载并解压内核linux3.10.58
-
    内核下载官网：https://www.kernel.org
-   
    解压内核(任意文件夹位置，10G左右空闲磁盘空间)：  
-   
    xz -d Linux-3.10.58.tar.xz
-   
    tar -xvf linux-3.10.58.tar
-   
 ## 2. 安装执行sodu make menuconfig命令时依赖的ncurses工具
 
    sudo apt-get install libncurses5-dev
