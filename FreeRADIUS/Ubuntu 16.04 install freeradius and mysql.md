@@ -1,8 +1,8 @@
 # 1. 安装mysql相关软件
 因为要将认证信息存在数据库Mysql中，所以必须安装如下三个软件：
-- sudo apt-get  install libtalloc-dev
-- sudo apt-get  install libssl-dev
-- sudo apt-get  install openssl
+- sudo apt-get install libtalloc-dev
+- sudo apt-get install libssl-dev
+- sudo apt-get install openssl
 - sudo apt-get install mysql-server
 - sudo apt-get isntall mysql-client
 - sudo apt-get install libmysqlclient-dev
