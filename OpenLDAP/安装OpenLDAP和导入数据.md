@@ -1,19 +1,19 @@
 # 1. 安装OpenLDAP和导入数据
-```cpp
+```shell
 sudo apt-get update
 sudo apt-get install slapd ldap-utils
 ```
 
 - 安装OpenLDAP后，可以使用sudo dpkg-reconfigure slapd命令对OpenLDAP重新配置，比如设置BaseDN，用户名和密码等信息。配置的时候，需要填写的，根据实际情况填写，需要选择的，选择默认选项即可。
 
-```cpp
+```shell
 sudo dpkg-reconfigure slapd
 ```
 
 # 2. 导入数据
 - 添加组节点: 创建文件group.ldif,内容如下
 
-```cpp
+```shell
 dn: ou=people,dc=nowlan,dc=com
 objectClass: organizationalUnit
 ou: people
@@ -25,13 +25,13 @@ ou: group
 
 - 导入组数据到OpenLDAP
 
-```cpp
+```shell
 ldapadd -x -D cn=admin,dc=nowlan,dc=com -W -f group.ldif
 ```
 
 - 添加用户节点: 创建文件user.ldif，内容如下
 
-```cpp
+```shell
 dn: uid=ldapuser1,ou=people,dc=nowlan,dc=com
 objectClass: top
 objectClass: account
@@ -87,13 +87,13 @@ shadowWarning: 0
 
 - 导入用户数据到OpenLDAP
 
-```cpp
+```shell
 ldapadd -x -W -D "cn=admin,dc=nowlan,dc=com" -f user.ldif
 ```
 
 - 给用户节点的用户ldapuser1,ldapuser2,ldapuser3设置密码123456
 
-```cpp
+```shell
 ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser1,ou=people,dc=nowlan,dc=com" -s 123456
 ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser2,ou=people,dc=nowlan,dc=com" -s 123456
 ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser3,ou=people,dc=nowlan,dc=com" -s 123456
