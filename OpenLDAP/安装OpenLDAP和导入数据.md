@@ -96,7 +96,7 @@ shadowWarning: 0
 ldapadd -x -W -D "cn=admin,dc=nowlan,dc=com" -f user.ldif
 ```
 
-- 给用户节点的用户设置密码
+- 给用户节点的用户ldapuser1,ldapuser2,ldapuser3设置密码123456
 
 ```cpp
 ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -W "uid=ldapuser1,ou=people,dc=nowlan,dc=com" -s 123456
