@@ -99,9 +99,9 @@ ldapadd -x -W -D "cn=admin,dc=nowlan,dc=com" -f user.ldif
 - 给用户节点的用户ldapuser1,ldapuser2,ldapuser3设置密码123456
 
 ```cpp
-ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -W "uid=ldapuser1,ou=people,dc=nowlan,dc=com" -s 123456
-ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -W "uid=ldapuser2,ou=people,dc=nowlan,dc=com" -s 123456
-ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -W "uid=ldapuser3,ou=people,dc=nowlan,dc=com" -s 123456
+ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser1,ou=people,dc=nowlan,dc=com" -s 123456
+ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser2,ou=people,dc=nowlan,dc=com" -s 123456
+ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser3,ou=people,dc=nowlan,dc=com" -s 123456
 ```
 
 > 如果只需要几条数据，则可以使用上面导入数据的方式，简单方便。如果需要导入大量数据，可以使用工具migrationtools。
