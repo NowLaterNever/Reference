@@ -1,16 +1,13 @@
 # 1. 安装mysql相关软件
 因为要将认证信息存在数据库Mysql中，所以必须安装如下三个软件：
-- sudo apt-get install libtalloc-dev
-- sudo apt-get install libssl-dev
-- sudo apt-get install openssl
 - sudo apt-get install mysql-server
 - sudo apt-get isntall mysql-client
 - sudo apt-get install libmysqlclient-dev
 
-# 2. 安装freeradius-ldap
-```cpp
-sudo apt-get install freeradius-ldap
-```
+# 2. 安装freeradius的依赖包
+- sudo apt-get install libtalloc-dev
+- sudo apt-get install libssl-dev
+- sudo apt-get install openssl
 
 # 3. 安装freeradius
 首先从官网下载安装文件freeradius-server-3.0.15.tar.gz，然后三步曲安装freeradius
