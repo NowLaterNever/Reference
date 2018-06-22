@@ -10,12 +10,7 @@ sudo apt-get install slapd ldap-utils
 sudo dpkg-reconfigure slapd
 ```
 
-# 2. 测试安装是否成功
-- ldapwhoami -H ldap:// -x
-
-> 如果输出"anonymous"，意味着OpenLDAP服务器正常运行并对我们的请求进行了应答。也可以执行ldapsearch -x -b "dc=nowlan,dc=com"。nowlan.com是使用sudo dpkg-reconfigure slapd时配置的DNS Domain Name。
-
-# 3. 导入数据
+# 2. 导入数据
 - 添加组节点: 创建文件group.ldif,内容如下
 
 ```cpp
@@ -106,7 +101,7 @@ ldappasswd -x -D "cn=admin,dc=nowlan,dc=com" -w Hello "uid=ldapuser3,ou=people,d
 
 > 如果只需要几条数据，则可以使用上面导入数据的方式，简单方便。如果需要导入大量数据，可以使用工具migrationtools。
 
-# 4. 使用ApacheDirectoryStudio连接OpenLDAP查看数据
+# 3. 使用ApacheDirectoryStudio连接OpenLDAP查看数据
 - 打开Apache Directory Studio，在菜单 LDAP 选择 New Connection
 - Connection name 配置为 nowlan.com；Hostname配置为OpenLDAP的服务器地址，Port默认是389，然后点击 Check Network Parameter 查看配置是否正确。如果配置正确，则点击 Next。
 - Bind DN or user 输入 cn=admin,dc=nowlan,dc=com,Bind password输入Hello。这里的配置都是根据执行sudo dpkg-reconfigure slapd时设置的。然后点击 Check Authentication，如果successful，则点击 Next。
