@@ -87,7 +87,7 @@ mysql -u root radius </usr/local/etc/raddb/mods-config/sql/main/mysql/schema.sql
 insert into radcheck(username,attribute,value,op) values('test','Cleartext-Password','test123',':=');
 ```
 
-- 修改FreeRADIUS中的mysql认证配置，表示支持sql
+- 创建软连接，表示支持sql(从sql中获取username/passwd,然后进行认证)
 
 ```cpp
 cd /usr/local/etc/raddb/mods-enabled/
