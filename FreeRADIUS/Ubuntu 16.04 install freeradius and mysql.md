@@ -74,7 +74,7 @@ mysql>exit;
 
 - 导入表结构命令：
 ```shell
-mysql -u root radius </usr/local/etc/raddb/mods-config/sql/main/mysql/schema.sql
+mysql -u root radius </usr/local/etc/raddb/mods-config/sql/main/mysql/schema.sql -p
 这样你就不能自己去创建相关的表了
 ```
 
