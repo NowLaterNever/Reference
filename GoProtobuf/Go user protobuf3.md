@@ -21,3 +21,7 @@ go get github.com/golang/protobuf/protoc-gen-go
 protoc --go_out=. helloworld.proto
 ```
 >helloworld.proto存在于执行命令的目录下。
+
+# 5. 参考资料
+[proto3文档](https://developers.google.com/protocol-buffers/docs/proto3)
+[go api文档](https://godoc.org/github.com/golang/protobuf/proto)
