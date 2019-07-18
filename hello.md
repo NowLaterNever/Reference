@@ -36,3 +36,4 @@ client4-->|read only|SVN
 client5(...)-->SVN
 SVN---|store the data|sharedrive
 ```
+---
