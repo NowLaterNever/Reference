@@ -5,8 +5,10 @@ go env
 > go使用protobuf，首先需要先搭建好go的开发环境。
 
 # 2. 安装protobuf3的go插件,需要切换到root用户
+> The compiler plugin protoc-gen-go will be installed in $GOBIN, defaulting to $GOPATH/bin. It must be in your $PATH for the protocol compiler protoc to find it.
+
 ```shell
-go get github.com/golang/protobuf/protoc-gen-go 
+go get -u github.com/golang/protobuf/protoc-gen-go 
 ```
 > 这条命令会下载protoc-gen-go到GOPATH/bin下，需要将protoc-gen-go拷贝到/usr/bin。protoc-gen-go只是protobuf3的golang插件，并不是真正的编译器。这条命令只有root用户才能执行成功。
 
@@ -21,3 +23,7 @@ go get github.com/golang/protobuf/protoc-gen-go
 protoc --go_out=. helloworld.proto
 ```
 >helloworld.proto存在于执行命令的目录下。
+
+# 5. 参考资料
+[proto3文档](https://developers.google.com/protocol-buffers/docs/proto3)
+[go api文档](https://godoc.org/github.com/golang/protobuf/proto)
